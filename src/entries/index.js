@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import Unauthenticated from './unauthenticated';
+import Authenticated from './authenticated';
 
 console.disableYellowBox = ['Remote Debugger'];
 
@@ -15,7 +16,7 @@ class Entry extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Unauthenticated />
+        <Authenticated />
       </View>
     );
   }

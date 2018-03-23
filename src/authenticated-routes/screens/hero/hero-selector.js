@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
-class SignIn extends Component {
+class HeroSelector extends Component {
   constructor() {
     super();
     this.state = {
-      nombre: 'SignIn',
+      nombre: 'HeroSelector',
     };
   }
 
@@ -13,11 +13,7 @@ class SignIn extends Component {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text> SignIn </Text>
-        <Button 
-          title="Create Account"
-          onPress={() => { navigation.navigate('SignUp') }}
-        />
+        <Text> HeroSelector </Text>
       </View>
     );
   }
@@ -32,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+export default HeroSelector;
