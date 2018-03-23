@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import HeroCardList from './components/hero-card-list';
 
 class HeroSelector extends Component {
   constructor() {
     super();
     this.state = {
       nombre: 'HeroSelector',
+      data: [
+        { id: 'a', name: 'aaa'},
+        { id: 'b', name: 'bbb'},
+        { id: 'c', name: 'ccc'},
+        { id: 'd', name: 'ddd'},
+        { id: 'e', name: 'eee'},
+        { id: 'f', name: 'fff'},
+        { id: 'g', name: 'ggg'},
+        { id: 'h', name: 'hhh'},
+        { id: 'i', name: 'iii'},
+        { id: 'j', name: 'jjj'},
+        { id: 'k', name: 'kkk'},
+        { id: 'l', name: 'lll'},
+        { id: 'm', name: 'mmm'},
+        { id: 'n', name: 'nnn'},
+        { id: 'o', name: 'ooo'},
+        { id: 'p', name: 'ppp'},
+        { id: 'q', name: 'qqq'}
+      ],
     };
   }
 
@@ -14,6 +34,9 @@ class HeroSelector extends Component {
     return (
       <View style={styles.container}>
         <Text> HeroSelector </Text>
+        <HeroCardList
+          heroList={this.state.data}
+        />
         <Button
           title="See HeroDetails"
           onPress={() => { navigation.navigate('HeroDetails') ;}}  
@@ -28,7 +51,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: '#949494',
   },
 });
 
