@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import MarvelHeroes from './App';
+import MarvelHeroes from './src/entries';
 
 AppRegistry.registerComponent('MarvelHeroes', () => MarvelHeroes);
