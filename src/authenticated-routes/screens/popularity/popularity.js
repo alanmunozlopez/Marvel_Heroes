@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 class Popularity extends Component {
   constructor() {
@@ -14,6 +14,10 @@ class Popularity extends Component {
     return (
       <View style={styles.container}>
         <Text> Popularity </Text>
+        <Button
+          title="HeroDetails"
+          onPress={() => { navigation.navigate('HeroDetails'); }}
+        />
       </View>
     );
   }

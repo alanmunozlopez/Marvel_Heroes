@@ -1,10 +1,10 @@
 import { StackNavigator } from 'react-navigation';
-import HeroSelector from './hero-selector';
-import HeroDetails from './hero-details';
+import Popularity from './popularity';
+import HeroDetails from '../hero/hero-details';
 
 const StackHero = StackNavigator({
-  HeroSelector: {
-    screen: HeroSelector,
+  Popularity: {
+    screen: Popularity,
   },
   HeroDetails: {
     screen: HeroDetails,

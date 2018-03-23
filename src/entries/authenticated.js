@@ -1,22 +1,23 @@
 import { TabNavigator } from 'react-navigation';
-import HeroStack from '../authenticated-routes/screens/hero/hero-selector';
-import Popularity from '../authenticated-routes/screens/popularity';
-import Search from '../authenticated-routes/screens/search';
+import StackHero from '../authenticated-routes/screens/hero';
+import StackPopularity from '../authenticated-routes/screens/popularity/stack-popularity';
+import StackSearch from '../authenticated-routes/screens/search/stack-search';
 
-const Authenticated = TabNavigator({
-  HeroSelector: {
-    screen: HeroStack,
+const Authenticated = TabNavigator(
+  {
+    StackHero: {
+      screen: StackHero,
+    },
+    StackPopularity: {
+      screen: StackPopularity,
+    },
+    StackSearch: {
+      screen: StackSearch,
+    },
   },
-  Popularity: {
-    screen: Popularity,
+  {
+    tabBarPosition: 'bottom',
   },
-  Search: {
-    screen: Search,
-  },
-},
-{
-  tabBarPosition: 'bottom',
-},
 );
 
 export default Authenticated;

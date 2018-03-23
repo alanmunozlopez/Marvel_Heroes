@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 
 class Search extends Component {
   constructor() {
@@ -14,6 +14,10 @@ class Search extends Component {
     return (
       <View style={styles.container}>
         <Text> Search </Text>
+        <Button
+          title="HeroDetails"
+          onPress={() => { navigation.navigate('HeroDetails'); }}
+        />
       </View>
     );
   }
