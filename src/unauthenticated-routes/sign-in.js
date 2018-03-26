@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
+import { loginAction } from '../store/actions';
+import SignInForm from './forms/sign-in-form';
 
 class SignIn extends Component {
   constructor() {
@@ -8,13 +11,18 @@ class SignIn extends Component {
       nombre: 'SignIn',
     };
   }
-
+  userSignIn = (values) => {
+    this.props.login(values);
+  }
   render() {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
         <Text> SignIn </Text>
-        <Button 
+        <SignInForm
+          login={this.userSignIn}
+        />
+        <Button
           title="Create Account"
           onPress={() => { navigation.navigate('SignUp') }}
         />
@@ -32,4 +40,14 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+const mapStateToProps = state => ({
+  prop: state.prop,
+});
+
+const mapDispatchToProps = dispatch => ({
+  login: (values) => {
+    dispatch(loginAction(values));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

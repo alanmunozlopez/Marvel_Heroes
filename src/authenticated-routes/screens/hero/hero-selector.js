@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
+import { authentication } from '../../../store/services/firebase';
 import HeroCardList from './components/hero-card-list';
 
 class HeroSelector extends Component {
@@ -40,6 +41,10 @@ class HeroSelector extends Component {
         <Button
           title="See HeroDetails"
           onPress={() => { navigation.navigate('HeroDetails') ;}}  
+        />
+        <Button
+          title="kill session"
+          onPress={() => { authentication.signOut(); }}
         />
       </View>
     );
