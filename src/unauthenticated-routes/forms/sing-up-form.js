@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
 import { authentication } from '../../store/services/firebase';
-import validationSignUpForm from './shared/validation-sign-up-form';
+import validationSignForm from './shared/validation-sign-form';
 
 const textField = props => (
   <View style={styles.textInput}>
@@ -26,7 +26,7 @@ const textField = props => (
   </View>
 );
 
-const validate = values => validationSignUpForm(values);
+const validate = values => validationSignForm(values);
 
 const SignUpForm = props => (
   <View>

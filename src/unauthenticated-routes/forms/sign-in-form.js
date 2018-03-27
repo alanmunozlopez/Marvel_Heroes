@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
-import validationSignUpForm from './shared/validation-sign-up-form';
+import validationSignForm from './shared/validation-sign-form';
+import TextField from './shared/text-input';
 
 const textField = props => (
   <View style={styles.textInput}>
@@ -43,7 +44,7 @@ const textField = props => (
 //   return errors;
 // };
 
-const validate = values => validationSignUpForm(values);
+const validate = values => validationSignForm(values);
 
 const SignInForm = props => (
   <View>
