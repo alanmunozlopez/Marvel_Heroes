@@ -9,38 +9,45 @@ class HeroSelector extends Component {
     this.state = {
       nombre: 'HeroSelector',
       data: [
-        { id: 'a', name: 'aaa'},
-        { id: 'b', name: 'bbb'},
-        { id: 'c', name: 'ccc'},
-        { id: 'd', name: 'ddd'},
-        { id: 'e', name: 'eee'},
-        { id: 'f', name: 'fff'},
-        { id: 'g', name: 'ggg'},
-        { id: 'h', name: 'hhh'},
-        { id: 'i', name: 'iii'},
-        { id: 'j', name: 'jjj'},
-        { id: 'k', name: 'kkk'},
-        { id: 'l', name: 'lll'},
-        { id: 'm', name: 'mmm'},
-        { id: 'n', name: 'nnn'},
-        { id: 'o', name: 'ooo'},
-        { id: 'p', name: 'ppp'},
-        { id: 'q', name: 'qqq'}
+        { id: 'a', name: 'aaa' },
+        { id: 'b', name: 'bbb' },
+        { id: 'c', name: 'ccc' },
+        { id: 'd', name: 'ddd' },
+        { id: 'e', name: 'eee' },
+        { id: 'f', name: 'fff' },
+        { id: 'g', name: 'ggg' },
+        { id: 'h', name: 'hhh' },
+        { id: 'i', name: 'iii' },
+        { id: 'j', name: 'jjj' },
+        { id: 'k', name: 'kkk' },
+        { id: 'l', name: 'lll' },
+        { id: 'm', name: 'mmm' },
+        { id: 'n', name: 'nnn' },
+        { id: 'o', name: 'ooo' },
+        { id: 'p', name: 'ppp' },
+        { id: 'q', name: 'qqq' },
       ],
     };
   }
 
-  render() {
+  heroClick = (hero) => {
     const { navigation } = this.props;
+    navigation.navigate(
+      'HeroDetails',
+      {
+        hero,
+      },
+    );
+    console.log(`frend the hero: ${hero}`);
+  }
+
+  render() {
     return (
       <View style={styles.container}>
         <Text> HeroSelector </Text>
         <HeroCardList
           heroList={this.state.data}
-        />
-        <Button
-          title="See HeroDetails"
-          onPress={() => { navigation.navigate('HeroDetails') ;}}  
+          heroClick={this.heroClick}
         />
         <Button
           title="kill session"

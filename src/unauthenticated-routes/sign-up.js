@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-  number: state.reducerHeroes,
+  prop: state.prop,
 });
 
 const mapDispatchToProps = dispatch => ({

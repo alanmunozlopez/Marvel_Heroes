@@ -14,6 +14,7 @@ function HeroCardList(props) {
     id={data.item.id}
     name={data.item.name}
     onPressHero={this.onPressHeroCard}
+    heroClick={props.heroClick}
   />);
 
   return (

@@ -12,7 +12,7 @@ const HeroCard = props => (
     style={styles.card}
   >
     <TouchableOpacity
-      onPress={() => { console.log('hero here dude'); }}
+      onPress={() => { props.heroClick({ id: props.id, name: props.name }); }}
     >
       <View style={styles.cardImage}>
         <Image

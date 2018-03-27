@@ -11,9 +11,11 @@ class HeroDetails extends Component {
 
   render() {
     const { navigation } = this.props;
+    console.log(this.props.navigation.state.params);
     return (
       <View style={styles.container}>
         <Text> HeroDetails </Text>
+        <Text> {this.props.navigation.state.params.hero.name} </Text>
       </View>
     );
   }
