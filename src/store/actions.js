@@ -18,3 +18,8 @@ export const beginSessionAction = values => ({
 export const closeSessionAction = values => ({
   type: CONSTANTS.CLOSE_SESSION,
 });
+
+export const listOfHeroesAction = values => ({
+  type: CONSTANTS.LIST_OF_HEROES,
+  values,
+});

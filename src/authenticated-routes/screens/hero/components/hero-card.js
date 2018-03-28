@@ -17,15 +17,12 @@ const HeroCard = props => (
       <View style={styles.cardImage}>
         <Image
           style={styles.cardDisplayImage}
-          source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+          source={{ uri: props.image }}
         />
       </View>
       <View style={styles.cardContent}>
         <Text style={styles.cardContentName}>
-            Hulk
-        </Text>
-        <Text style={styles.cardContentDetails}>
-            a green man...
+          {props.name}
         </Text>
       </View>
     </TouchableOpacity>
@@ -51,22 +48,30 @@ const styles = StyleSheet.create({
     margin: '5%',
     borderWidth: 2,
     borderColor: 'black',
+    backgroundColor: 'red',
   },
   cardImage: {
     width: '100%',
+    backgroundColor: 'black',
   },
   cardDisplayImage: {
     width: '100%', height: 150,
   },
   cardContent: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 16,
     backgroundColor: 'red',
   },
   cardContentName: {
-    fontSize: 25,
+    fontSize: 21,
     margin: 0,
     textAlign: 'center',
     color: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cardContentDetails: {
     fontSize: 15,

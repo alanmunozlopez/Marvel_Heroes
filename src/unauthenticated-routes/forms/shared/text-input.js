@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 
-
+// not rulz :(
 const textField = props => (
   <View style={styles.textInput}>
     <TextInput

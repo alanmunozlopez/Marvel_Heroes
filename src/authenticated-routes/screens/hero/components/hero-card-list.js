@@ -13,6 +13,7 @@ function HeroCardList(props) {
   _renderItem = data => (<HeroCard
     id={data.item.id}
     name={data.item.name}
+    image={`${data.item.thumbnail.path.replace('http:', 'https:')}.${data.item.thumbnail.extension}`}
     onPressHero={this.onPressHeroCard}
     heroClick={props.heroClick}
   />);

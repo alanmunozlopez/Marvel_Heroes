@@ -4,15 +4,6 @@ import ReduxSaga from 'redux-saga';
 import sagaFunction from './sagas';
 import CONSTANTS from './constants';
 
-const reducerHeroes = (state = [0], action) => {
-  switch (action.type) {
-    case CONSTANTS.HERO_LIST:
-      return [...state, 1];
-    default:
-      return state;
-  }
-};
-
 const reducerSession = (state = null, action) => {
   switch (action.type) {
     case CONSTANTS.BEGIN_SESSION:
@@ -20,6 +11,16 @@ const reducerSession = (state = null, action) => {
       return action.values;
     case CONSTANTS.CLOSE_SESSION:
       return null;
+    default:
+      return state;
+  }
+};
+
+const reducerHeroes = (state = null, action) => {
+  switch (action.type) {
+    case CONSTANTS.LIST_OF_HEROES:
+      console.log(action);
+      return action;
     default:
       return state;
   }
