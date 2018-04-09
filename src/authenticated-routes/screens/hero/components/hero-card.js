@@ -12,7 +12,7 @@ const HeroCard = props => (
     style={styles.card}
   >
     <TouchableOpacity
-      onPress={() => { props.heroClick({ id: props.id, name: props.name }); }}
+      onPress={() => { props.heroClick({ id: props.id, name: props.name, description: props.description, wiki: props.wiki, image: props.image, events: props.events }); }}
     >
       <View style={styles.cardImage}>
         <Image
@@ -30,54 +30,55 @@ const HeroCard = props => (
 );
 
 const styles = StyleSheet.create({
-  row: {
-    fontSize: 24,
-    padding: 42,
-    borderWidth: 1,
-    borderColor: '#DDDDDD',
-  },
   card: {
-    width: '40%',
-    shadowColor: '#000000',
+    flex: 1,
+    shadowColor: 'gray',
     shadowOffset: {
-      width: 0,
-      height: 3,
+      width: 1,
+      height: 2,
     },
     shadowRadius: 5,
     shadowOpacity: 1,
-    margin: '5%',
-    borderWidth: 2,
-    borderColor: 'black',
+    // margin: '5%',
+    borderWidth: 1,
+    borderColor: 'gray',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'red',
+    margin: 8,
   },
   cardImage: {
     width: '100%',
-    backgroundColor: 'black',
+    backgroundColor: 'gray',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
   cardDisplayImage: {
     width: '100%', height: 150,
   },
   cardContent: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
+    // padding: 16,
+    flexDirection: 'row',
     backgroundColor: 'red',
+    width: '100%',
+    padding: 8,
   },
   cardContentName: {
+    flex: 1,
+    width: '100%',
     fontSize: 21,
-    margin: 0,
     textAlign: 'center',
     color: 'white',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'red',
+    fontWeight: 'bold',
   },
   cardContentDetails: {
     fontSize: 15,
-    margin: 0,
     textAlign: 'center',
-    color: 'white',
+    color: 'red',
   },
 });
 

@@ -1,10 +1,6 @@
 import React from 'react';
 import {
   StyleSheet,
-  View,
-  Image,
-  Text,
-  SectionList,
   FlatList,
 } from 'react-native';
 import HeroCard from './hero-card';
@@ -14,6 +10,9 @@ function HeroCardList(props) {
     id={data.item.id}
     name={data.item.name}
     image={`${data.item.thumbnail.path.replace('http:', 'https:')}.${data.item.thumbnail.extension}`}
+    description={data.item.description}
+    wiki={data.item.urls}
+    events={data.item.events.items}
     onPressHero={this.onPressHeroCard}
     heroClick={props.heroClick}
   />);
@@ -22,9 +21,16 @@ function HeroCardList(props) {
     <FlatList
       data={props.heroList}
       renderItem={this._renderItem}
-      numColumns={2}
+      numColumns={1}
+      style={styles.list}
     />
   );
 }
+
+const styles = StyleSheet.create({
+  list: {
+    flexDirection: 'column',
+  },
+});
 
 export default HeroCardList;

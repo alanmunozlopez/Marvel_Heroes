@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { authentication } from '../../../store/services/firebase';
 import HeroCardList from './components/hero-card-list';
 import { listOfHeroesAction } from '../../../store/actions';
 import Marvel from '../../../store/services/marvel';
 
 class HeroSelector extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Marvel Heroes',
+    tabBarLabel: ' ',
+    headerBackTitle: ' ',
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+    headerTintColor: 'red',
+  });
   constructor() {
     super();
     this.state = {
       nombre: 'HeroSelector',
-      data: [
-        { id: 'a', name: 'aaa', thumbnail: { path: 'https://i.annihil.us/u/prod/marvel/i/mg/1/b0/5269678709fb7', extension: 'jpg' } },
-        { id: 'b', name: 'bbb', thumbnail: { path: 'https://facebook.github.io/react-native/docs/assets/favicon', extension: 'png' } },
-        { id: 'c', name: 'ccc', thumbnail: { path: 'https://facebook.github.io/react-native/docs/assets/favicon', extension: 'png' } },
-      ],
+      data: [],
     };
   }
 
   componentDidMount() {
-    this.props.listOfHeroes();
+    this.state.data = this.props.heroes;
   }
 
   heroClick = (hero) => {
@@ -38,19 +42,14 @@ class HeroSelector extends Component {
     let normalMsg = 'hola';
     if (this.props.heroes) {
       normalMsg = 'chau';
+      this.state.isSplashRender = false;
       this.state.data = this.props.heroes.values;
     }
     return (
       <View style={styles.container}>
-        <Text> {normalMsg} </Text>
-        <Text> {!this.props.heroes ? 'Nigga' : 'is here suckers' } </Text>
         <HeroCardList
           heroList={this.state.data}
           heroClick={this.heroClick}
-        />
-        <Button
-          title="kill session"
-          onPress={() => { authentication.signOut(); }}
         />
       </View>
     );
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#949494',
+    backgroundColor: 'white',
   },
 });
 
@@ -71,17 +70,20 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  listOfHeroes: () => {
-    const marvelEndpoint = Marvel();
-    console.log(marvelEndpoint);
-    fetch(marvelEndpoint)
-      .then(response => response.json())
-      .then(responseJson => responseJson.data.results)
-      .then((responseData) => {
-        console.log(responseData);
-        dispatch(listOfHeroesAction(responseData));
-      });
-  },
+  listOfHeroes: () => true,
+  // listOfHeroes: () => {
+  //   const marvelEndpoint = Marvel();
+  //   console.log(marvelEndpoint);
+  //   fetch(marvelEndpoint)
+  //     .then(response => response.json())
+  //     .then(responseJson => responseJson.data.results)
+  //     .then((responseData) => {
+  //       console.log(responseData);
+  //       console.log('hihi');
+  //       console.log(this.state);
+  //       dispatch(listOfHeroesAction(responseData));
+  //     });
+  // },
 });
 
 

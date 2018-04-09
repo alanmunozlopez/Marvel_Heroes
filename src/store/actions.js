@@ -19,7 +19,7 @@ export const closeSessionAction = values => ({
   type: CONSTANTS.CLOSE_SESSION,
 });
 
-export const listOfHeroesAction = values => ({
-  type: CONSTANTS.LIST_OF_HEROES,
+export const heroesAction = values => ({
+  type: CONSTANTS.GET_HEROES,
   values,
 });

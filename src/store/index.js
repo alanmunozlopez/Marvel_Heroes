@@ -18,7 +18,7 @@ const reducerSession = (state = null, action) => {
 
 const reducerHeroes = (state = null, action) => {
   switch (action.type) {
-    case CONSTANTS.LIST_OF_HEROES:
+    case CONSTANTS.GET_HEROES:
       console.log(action);
       return action;
     default:

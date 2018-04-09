@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { View, Text, Button, StyleSheet } from 'react-native';
 
 class Popularity extends Component {
+  static navigationOptions = {
+    title: 'Popular Heroes',
+    headerBackTitle: ' ',
+    tabBarLabel: ' ',
+    headerStyle: {
+      backgroundColor: 'white',
+    },
+    headerTintColor: 'red',
+  };
   constructor() {
     super();
     this.state = {
@@ -11,6 +21,7 @@ class Popularity extends Component {
 
   render() {
     const { navigation } = this.props;
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <Text> Popularity </Text>
@@ -28,8 +39,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'blue',
+    backgroundColor: 'white',
   },
 });
 
-export default Popularity;
+const mapStateToProps = state => ({
+  heroes: state.reducerHeroes,
+});
+
+const mapDispatchToProps = dispatch => ({
+  listOfHeroes: () => {
+    return true;
+  },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Popularity);

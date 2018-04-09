@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { authentication } from '../store/services/firebase';
-import Unauthenticated from './unauthenticated';
 import Authenticated from './authenticated';
-import { beginSessionAction, closeSessionAction } from '../store/actions';
+import SplashScreen from './splash-screen';
+
+import { heroesAction } from '../store/actions';
+import Marvel from '../store/services/marvel';
 
 class SelectorScreen extends Component {
   constructor() {
@@ -15,16 +16,16 @@ class SelectorScreen extends Component {
   }
 
   componentDidMount() {
-    this.props.authentication();
+    this.props.getHeroes();
   }
 
   render() {
     return (
       <View style={styles.container}>
         {
-        this.props.user ?
-          <Authenticated /> :
-          <Unauthenticated />
+          this.props.heroes
+          ? <Authenticated />
+          : <SplashScreen />
         }
       </View>
     );
@@ -39,27 +40,22 @@ const styles = StyleSheet.create({
 });
 
 const mapStateToProps = state => ({
-  user: state.reducerSession,
+  heroes: state.reducerHeroes,
 });
 
 const mapDispatchToProps = dispatch => ({
-  authentication: () => {
-    authentication.onAuthStateChanged((user) => {
-      if (user) {
-        console.log(user.toJSON());
-        dispatch(beginSessionAction(user));
-        // const displayName = user.displayName;
-        // const email = user.email;
-        // const emailVerified = user.emailVerified;
-        // const photoURL = user.photoURL;
-        // const isAnonymous = user.isAnonymous;
-        // const uid = user.uid;
-        // const providerData = user.providerData;
-      } else {
-        console.log('session dont detected');
-        dispatch(closeSessionAction());
-      }
-    });
+  getHeroes: () => {
+    const marvelEndpoint = Marvel();
+    console.log(marvelEndpoint);
+    fetch(marvelEndpoint)
+      .then(response => response.json())
+      .then(responseJson => responseJson.data.results)
+      .then((responseData) => {
+        console.log(responseData);
+        console.log('RESPONSE HEROES');
+        console.log(this.state);
+        dispatch(heroesAction(responseData));
+      });
   },
 });
 

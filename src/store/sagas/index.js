@@ -1,6 +1,6 @@
 import { takeEvery, call } from 'redux-saga/effects';
 import { authentication, database } from '../services/firebase';
-// import Marvel from '../services/marvel';
+import Marvel from '../services/marvel';
 import CONSTANTS from '../constants';
 
 const createUser = values =>
@@ -14,13 +14,6 @@ const registerInDatabase = ({ uid, email, name }) =>
     email,
   });
 
-// const getHeroes = () => {
-//   const marvelEndpoint = Marvel();
-//   console.log(marvelEndpoint);
-//   return fetch(marvelEndpoint)
-//     .then(response => response.json())
-//     .then(responseJson => responseJson.data.results);
-// };
 
 function* sagaRegister(values) {
   console.log('valores');
@@ -39,6 +32,22 @@ function* sagaRegister(values) {
   }
 }
 
+const getHeroes = state => database.ref(`access/${Date.now()}`).set({
+  state,
+});
+
+function* sagaHeroes() {
+  try {
+    const result = yield call(getHeroes, 'success');
+    console.log('CALL THE SAGA');
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.log('Errrrrrr');
+    console.log(error);
+  }
+}
+
 const signInUser = ({ email, password }) =>
   authentication
     .signInWithEmailAndPassword(email, password)
@@ -53,17 +62,9 @@ function* sagaLogin(values) {
   }
 }
 
-// function* sagaGetHeroes(values) {
-//   try {
-//     const result = yield call(getHeroes, values);
-//     console.log(result);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
 
 export default function* sagaFunction() {
   yield takeEvery(CONSTANTS.REGISTER, sagaRegister);
   yield takeEvery(CONSTANTS.LOGIN, sagaLogin);
-  // yield takeEvery(CONSTANTS.LIST_OF_HEROES, sagaGetHeroes);
+  yield takeEvery(CONSTANTS.GET_HEROES, sagaHeroes);
 }
