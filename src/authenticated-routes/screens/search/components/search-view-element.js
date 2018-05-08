@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     borderRadius: 31,
     borderWidth: 1.5,
     borderColor: 'black',
-    backgroundColor: 'gray',
+    // backgroundColor: 'gray',
   },
   rowName: {
     fontSize: 14,

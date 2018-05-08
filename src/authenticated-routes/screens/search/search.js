@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Text, StyleSheet, View, ListView, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { StyleSheet, View, ListView, TextInput, ActivityIndicator } from 'react-native';
 import SearchViewElement from './components/search-view-element';
 
 class Search extends Component {
@@ -83,7 +83,7 @@ class Search extends Component {
           onChangeText={text => this.SearchFilterFunction(text)}
           value={this.state.text}
           underlineColorAndroid="transparent"
-          placeholder="Search Here"
+          placeholder="Search Hero"
         />
 
         <ListView

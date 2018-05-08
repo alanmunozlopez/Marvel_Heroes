@@ -1,6 +1,6 @@
 import * as firebase from 'firebase';
 
-// Initialize Firebase
+// Develop
 const config = {
   apiKey: 'AIzaSyDgyZIFQndCH4lPv1d2AP1O0-xGtIcLwek',
   authDomain: 'marvel-heroes-de669.firebaseapp.com',
@@ -9,6 +9,8 @@ const config = {
   storageBucket: 'marvel-heroes-de669.appspot.com',
   messagingSenderId: '47816047424',
 };
+
+
 firebase.initializeApp(config);
 
 export const authentication = firebase.auth();

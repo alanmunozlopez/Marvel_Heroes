@@ -31,6 +31,7 @@ const Authenticated = TabNavigator(
     }),
     tabBarPosition: 'bottom',
     tabBarOptions: {
+      showIcon: true,
       style: {
         backgroundColor: 'white',
         paddingTop: 8,

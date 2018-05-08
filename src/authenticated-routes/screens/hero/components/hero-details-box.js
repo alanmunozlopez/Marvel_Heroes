@@ -2,11 +2,9 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  Text,
-  Linking,
 } from 'react-native';
 import SwipeableViews from 'react-swipeable-views-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import HeroDetailsView from './hero-details-view';
 
 
 const setDetailsBox = (props) => {
@@ -17,30 +15,31 @@ const setDetailsBox = (props) => {
   const urls = props.urls ? props.urls.slice(0, 3) : false;
 
   if (props.description) {
-    viewslo.push(<View>
-      <Text style={styles.title}> Description </Text>
-      <Text style={styles.textInfo}> {props.description} </Text>
-    </View>);
+    viewslo.push(
+      <HeroDetailsView
+        description={props.description}
+      />
+    );
   }
-  if (events) {
-    viewslo.push(<View> <Text style={styles.title}> Events </Text> {events.map(item => (
-      <Text style={styles.textInfo}> {item.name} </Text>
-    ))}
-    </View>);
+  if (props.events) {
+    viewslo.push(
+      <HeroDetailsView
+        events={events}
+      />
+    );
   }
-  if (urls) {
-    viewslo.push(<View> <Text style={styles.title}> Links </Text>{urls.map(item => (
-      <Text style={styles.textLink} onPress={() => Linking.openURL(item.url)} > <Ionicons name="ios-link" size={17} color="blue" /> Marvel {item.type} </Text>
-    ))}
-    </View>);
+  if (props.urls) {
+    viewslo.push(
+      <HeroDetailsView
+        links={urls}
+      />
+    );
   }
 
   return viewslo;
 };
 
 const HeroDetailsBox = props =>
-  // viewslo = [];
-  // setDetailsBox(props);
   (
     <View
       style={styles.container}
@@ -54,6 +53,7 @@ const HeroDetailsBox = props =>
       </SwipeableViews>
     </View>
   );
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
