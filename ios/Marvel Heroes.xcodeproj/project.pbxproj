@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -42,6 +43,10 @@
 		7D9CA95EB47C416CA1C6CEE6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 765726C87EF94153B6983D8B /* Feather.ttf */; };
 		7F34ACF589DE423DA7F7CA01 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCA7AF1153D4E13B18CDBDB /* libRNVectorIcons.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		89E0ACF02148A457001198F6 /* amor_lo_siento.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89E0ACEF2148A457001198F6 /* amor_lo_siento.mp3 */; };
+		89E0ACF32148A568001198F6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E0ACF22148A568001198F6 /* AVFoundation.framework */; };
+		89E0ACF52148A7ED001198F6 /* avengers_theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89E0ACF42148A7EC001198F6 /* avengers_theme.mp3 */; };
+		89E0ACF82148A83E001198F6 /* Avengers.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E0ACF72148A83E001198F6 /* Avengers.m */; };
 		9DF02247A67B48C2ADDAD5D7 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3873E2B926C4D85ACD81185 /* SimpleLineIcons.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B37E4195B85F498D831DC52D /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4706FE84C6C47D8B9F2A38A /* EvilIcons.ttf */; };
@@ -366,6 +371,11 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8487205CDA7E4930AFA14977 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		89E0ACEF2148A457001198F6 /* amor_lo_siento.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = amor_lo_siento.mp3; sourceTree = "<group>"; };
+		89E0ACF22148A568001198F6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		89E0ACF42148A7EC001198F6 /* avengers_theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = avengers_theme.mp3; sourceTree = "<group>"; };
+		89E0ACF62148A83E001198F6 /* Avengers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avengers.h; sourceTree = "<group>"; };
+		89E0ACF72148A83E001198F6 /* Avengers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Avengers.m; sourceTree = "<group>"; };
 		9169EEDD8F01479F8638E879 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ACB1C95C91EB40B3BC9978F7 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		ACCA7AF1153D4E13B18CDBDB /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
@@ -388,6 +398,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E0ACF32148A568001198F6 /* AVFoundation.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -512,6 +523,7 @@
 		13B07FAE1A68108700A75B9A /* MarvelHeroes */ = {
 			isa = PBXGroup;
 			children = (
+				89E0ACF12148A45E001198F6 /* Sounds */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -519,6 +531,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				89E0ACF62148A83E001198F6 /* Avengers.h */,
+				89E0ACF72148A83E001198F6 /* Avengers.m */,
 			);
 			name = MarvelHeroes;
 			sourceTree = "<group>";
@@ -549,6 +563,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89E0ACF22148A568001198F6 /* AVFoundation.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 			);
 			name = Frameworks;
@@ -642,6 +657,15 @@
 				2D02E4901E0B4A5D006451C7 /* MarvelHeroes-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		89E0ACF12148A45E001198F6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				89E0ACEF2148A457001198F6 /* amor_lo_siento.mp3 */,
+				89E0ACF42148A7EC001198F6 /* avengers_theme.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		ADBDB9201DFEBF0600ED6528 /* Products */ = {
@@ -1134,7 +1158,9 @@
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				09CAB62367864B96892D1B87 /* Entypo.ttf in Resources */,
 				B37E4195B85F498D831DC52D /* EvilIcons.ttf in Resources */,
+				89E0ACF02148A457001198F6 /* amor_lo_siento.mp3 in Resources */,
 				7D9CA95EB47C416CA1C6CEE6 /* Feather.ttf in Resources */,
+				89E0ACF52148A7ED001198F6 /* avengers_theme.mp3 in Resources */,
 				04DDDC251B6B4348A7ADF06B /* FontAwesome.ttf in Resources */,
 				F20F0ABA37514BE690E05D7F /* Foundation.ttf in Resources */,
 				4BED7A312DA24AF19AB05746 /* Ionicons.ttf in Resources */,
@@ -1207,6 +1233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E0ACF82148A83E001198F6 /* Avengers.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

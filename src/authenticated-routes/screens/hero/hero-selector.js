@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import HeroCardList from './components/hero-card-list';
 import { listOfHeroesAction } from '../../../store/actions';
 import Marvel from '../../../store/services/marvel';
+
+import NativeModules from 'NativeModules';
 
 class HeroSelector extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -25,6 +27,10 @@ class HeroSelector extends Component {
 
   componentDidMount() {
     this.state.data = this.props.heroes;
+    if(Platform.OS === 'ios') {
+      console.log('Play avengers theme');
+      NativeModules.Avengers.playTheme();
+    }
   }
 
   heroClick = (hero) => {

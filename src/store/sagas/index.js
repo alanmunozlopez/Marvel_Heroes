@@ -1,3 +1,4 @@
+import {Platform} from 'react-native';
 import { takeEvery, call } from 'redux-saga/effects';
 import { authentication, database } from '../services/firebase';
 import Marvel from '../services/marvel';
@@ -34,6 +35,7 @@ function* sagaRegister(values) {
 
 const getHeroes = state => database.ref(`access/${Date.now()}`).set({
   state,
+  origin: Platform.OS === 'ios' ? 'iOS' : 'Android',
 });
 
 function* sagaHeroes() {
